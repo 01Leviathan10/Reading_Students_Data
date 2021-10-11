@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Students Data</title>
+</head>
+
+<body>
+    <script>
+        class Student {
+            constructor(name, address, phone, course) {
+                this.name = name,
+                    this.address = address,
+                    this.phone = phone,
+                    this.course = course
+            }
+            getInfo() {
+                return "Name: " + this.name + "\n" +
+                    "Address: " + this.address + "\n" +
+                    "Phone: " + this.phone + "\n" +
+                    "Course: " + this.course + "\n";
+            }
+        }
+
+        let studdent1 = new Student("Marko", "Mladenovac", "+381231231", "Matematika");
+        let studdent2 = new Student("Jovana", "Beograd", "+38123848", "Engleski");
+        let studdent3 = new Student("Danka", "Obrenovac", "+381568848", "Geografija");
+
+        let infoStudent1 = studdent1.getInfo();
+        let infoStudent2 = studdent2.getInfo();
+        let infoStudent3 = studdent3.getInfo();
+
+        console.log(infoStudent1);
+        console.log(infoStudent2);
+        console.log(infoStudent3);
+    </script>
+</body>
+
+</html>
