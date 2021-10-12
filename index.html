@@ -25,17 +25,23 @@
             }
         }
 
-        let studdent1 = new Student("Marko", "Mladenovac", "+381231231", "Matematika");
-        let studdent2 = new Student("Jovana", "Beograd", "+38123848", "Engleski");
-        let studdent3 = new Student("Danka", "Obrenovac", "+381568848", "Geografija");
+        var data = fetch("https://v-dresevic.github.io/Advanced-JavaScript-Programming/data/students.txt").then(
+            function (response) {
+                response.text().then(function (text) {
+                    data.text = text;
+                    let row = data.text.split("\n")
+                    let names = ['Name: ', 'Address: ', 'Phone: ', 'Course: '];
 
-        let infoStudent1 = studdent1.getInfo();
-        let infoStudent2 = studdent2.getInfo();
-        let infoStudent3 = studdent3.getInfo();
+                    let k = 0;
 
-        console.log(infoStudent1);
-        console.log(infoStudent2);
-        console.log(infoStudent3);
+                    for (let i = 0; i < row.length/4; i++) {
+                        for (let j = 0; j < names.length; j++) {
+                            document.body.innerHTML += "<p> " + names[j] + row[k] + "</p>";
+                                k++
+                        }
+                    }
+                })
+            })
     </script>
 </body>
 
